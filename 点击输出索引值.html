@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery.min.js"></script>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    li{
+      float: left;
+      width: 100px;
+      height: 30px;
+      line-height: 30px;
+      background-color: red;
+      text-align: center;
+      list-style: none;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+  <script>
+    // $('li').click(function(){
+    //  console.log( $(this).index())
+    // })
+
+    // 使用原生
+    var lis = document.querySelectorAll('li');
+    for(i=0;i<lis.length;i++){
+      lis[i].index = i;
+      lis[i].onclick=function(){
+        console.log(this.index)
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery.min.js"></script>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    li{
+      list-style: none;
+    }
+    body{
+      position: relative;
+    }
+    .one{
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translate(-50%,0);
+
+    }
+    .one>li{
+      float: left;
+      background-color: red;
+      width:100px;
+      height: 30px;
+      border: 1px solid #ccc;
+      text-align: center;
+      line-height: 30px;
+    }
+    .two>li{
+      width:100px;
+      height: 30px;
+      background-color: yellow;
+      border: 1px solid #ccc;
+    }
+    .two{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <ul class="one">
+    <li>java
+      <ul class="two">
+        <li>java1</li>
+        <li>java2</li>
+        <li>java3</li>
+      </ul>
+    </li>
+    <li>jquery
+      <ul class="two">
+        <li>jquerya1</li>
+        <li>jquery2</li>
+        <li>jquery3</li>
+      </ul>
+    </li>
+    <li>web
+      <ul class="two">
+        <li>web1</li>
+        <li>web2</li>
+        <li>web3</li>
+      </ul>
+    </li>
+    <li>html
+      <ul class="two">
+        <li>html1</li>
+        <li>html2</li>
+        <li>html3</li>
+      </ul>
+    </li>
+  </ul>
+  <script>
+     $('.one').children('li').mouseover(function(){
+       $(this).children('.two').show()//也可以将show改成slideDown（）下滑，动画前添加stop（）
+     })
+     $('.one').children('li').mouseout(function(){
+       $(this).children('.two').hide()//也可以将hide改成slideUp（）上滑
+     })
+
+  </script>
+</body>
+</html>
